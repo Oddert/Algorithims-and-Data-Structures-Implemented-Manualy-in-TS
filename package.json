@@ -1,0 +1,27 @@
+{
+  "name": "algorithm-self-implamentation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run build && mocha dist/**/*.test.js",
+    "start": "npm run ts_watch",
+    "build": "npm run ts_build",
+    "test_watch": "concurrently \"npm run ts_watch\" \"npm run mocha -w dist/**/*/test.js\"",
+    "ts_lint": "tslint -c tslint.json -p tsconfig.json --fix",
+    "ts_build": "npm run ts_lint && tsc",
+    "ts_watch": "tsc -w"
+  },
+  "author": "Robyn Felicity Heather Veitch",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/chai": "^4.2.21",
+    "@types/mocha": "^9.0.0",
+    "chai": "^4.3.4",
+    "concurrently": "^6.2.0",
+    "mocha": "^9.0.2",
+    "tslint": "^6.1.3",
+    "typescript": "^4.3.5"
+  }
+}
