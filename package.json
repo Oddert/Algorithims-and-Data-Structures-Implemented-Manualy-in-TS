@@ -7,7 +7,8 @@
     "test": "npm run build && mocha dist/**/*.test.js",
     "start": "npm run ts_watch",
     "build": "npm run ts_build",
-    "test_watch": "concurrently \"npm run ts_watch\" \"npm run mocha -w dist/**/*/test.js\"",
+    "dev": "concurrently \"npm run ts_watch\" \"npm run test_watch\"",
+		"test_watch": "mocha -w dist/**/*/test.js",
     "ts_lint": "tslint -c tslint.json -p tsconfig.json --fix",
     "ts_build": "npm run ts_lint && tsc",
     "ts_watch": "tsc -w"
