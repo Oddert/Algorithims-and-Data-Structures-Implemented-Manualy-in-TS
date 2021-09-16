@@ -1,10 +1,10 @@
 
 
 export function sliceDefault (
-	arrStr: any[] | string, 
-	start?: string | number, 
+	arrStr: any[] | string,
+	start?: string | number,
 	end?: string | number,
-	...rest: any	
+	...rest: any
 ): any {
 	if (start !== undefined) {
 		if (end !== undefined) {
@@ -18,8 +18,8 @@ export function sliceDefault (
 
 function slice (
 	arrStr: any[] | string,
-	start?: string | number, 
-	end?: string | number, 
+	start?: string | number,
+	end?: string | number,
 	...rest: any
 ): any[] | string {
 	if (arguments.length === 0) throw new Error('no arguments supplied')
@@ -28,7 +28,6 @@ function slice (
 	const out = []
 	const startIdx = assignStartEnd(start, 0)
 	const endIdx = assignStartEnd(end, arr.length)
-	console.log({arr, startIdx, endIdx})
 
 	function assignStartEnd (startEnd: unknown, fallback: number) {
 		if (typeof startEnd === "function") return 0

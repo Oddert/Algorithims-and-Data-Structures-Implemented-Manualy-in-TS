@@ -68,7 +68,10 @@ describe('Slice : already built in', () => {
 	it('adviserial and complex values for start and end are ignored', () => {
 		const arr = [1,2,3,4,5]
 		// @ts-ignore
-		assert.deepEqual(sliceDefault(arr, {}, () => {}), [])
+		assert.deepEqual(sliceDefault(arr, {}, () => {
+			// no-empty tslint rule bypass
+			const i = 0
+		}), [])
 		// @ts-ignore
 		assert.deepEqual(sliceDefault(arr, {}), [1,2,3,4,5])
 	})
@@ -127,7 +130,10 @@ describe('Slice : self implamented', () => {
 	it('adviserial and complex values for start and end are ignored', () => {
 		const arr = [1,2,3,4,5]
 		// @ts-ignore
-		assert.deepEqual(slice(arr, {}, () => {}), [])
+		assert.deepEqual(slice(arr, {}, () => {
+			// no-empty tslint rule bypass
+			const i = 0
+		}), [])
 		// @ts-ignore
 		assert.deepEqual(slice(arr, {}), [1,2,3,4,5])
 	})

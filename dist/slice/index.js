@@ -28,7 +28,6 @@ function slice(arrStr, start, end) {
     var out = [];
     var startIdx = assignStartEnd(start, 0);
     var endIdx = assignStartEnd(end, arr.length);
-    console.log({ arr: arr, startIdx: startIdx, endIdx: endIdx });
     function assignStartEnd(startEnd, fallback) {
         if (typeof startEnd === "function")
             return 0;
